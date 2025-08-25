@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do list</title>
+    <link rel="stylesheet" href="./src/output.css">
+</head>
+<style>
+    .checked{
+        position: relative;
+        padding-left: 35px;
+        text-decoration-line: line-through;
+        background-color: rgb(110, 247, 110);
+        
+        
+            }
+    .checked::before {
+    content: "";
+    position: absolute;
+    left: 8px;              /* left se gap */
+    top: 50%;               /* vertical center */
+    transform: translateY(-50%);
+    width: 25px;            /* 👈 width */
+    height: 25px; 
+    padding-left: 10px;          /* 👈 height */
+    background-image: url("./img/check.png");
+    background-size: contain;  /* image ko fit karega */
+    background-repeat: no-repeat;
+}
+
+     
+     li span {
+        flex: auto;
+        position: absolute;
+        right: 10px;
+        margin-right: 20px;
+   
+       
+        cursor: pointer;
+        text-align: center; 
+        border-radius: 50%;
+
+     } 
+     li span:hover{
+        background: #55555567;
+     }
+    li{
+        background-color: white;
+        padding: 10px;
+        margin: 10px;
+        border-radius: 20px;
+        padding-left: 20px;
+        flex: auto;
+        gap: 2px;
+    }
+</style>
+<body>
+
+    <div class="bg-[#344141] h-screen  flex justify-start items-center flex-col gap-5 pt-5 w-screen">
+        <div class="flex row items-center justify-center gap-5 text-white">
+            <h2 class="font-bold text-xl text-white">To Do List</h2>
+            <img width="30px"    src="./img/check-list.png" alt="">
+        </div>
+
+
+
+        <div class=" font-bold bg-white  rounded-full shadow-[0_5px_25px_rgba(0,0,0,0.5)] flex ">
+            <input type="text" placeholder="Enter your task" class="p-3 rounded-full  Input-Area">
+            <button class="p-3  bg-[#354343e1] text-white  rounded-full cursor-pointer ml-2 pl-6 pr-6 gap-y-10 btn1  " onclick="addtask()" >Add</button>
+        </div>
+        <ul class="overflow-auto  w-screen list-container">
+            
+            <!-- <li class="bg-white p-2 m-2 rounded-full shadow-[0_5px_25px_rgba(0,0,0,0.5)]  mb-3 mt-3 flex gap-3 pl-6 checked ">task 1 </li>
+             <li class="bg-white p-2 m-2 rounded-full shadow-[0_5px_25px_rgba(0,0,0,0.5)] mb-3 mt-3 flex gap-3 pl-6  ">       task 1 </li>
+            <li class="bg-white p-2 m-2 rounded-full shadow-[0_5px_25px_rgba(0,0,0,0.5)]  mb-3 mt-3 flex gap-3 pl-6  ">       task 1 </li>
+            <li class="bg-white p-2 m-2 rounded-full shadow-[0_5px_25px_rgba(0,0,0,0.5)]  mb-3 mt-3 flex gap-3 pl-6  ">task 1 </li>
+            <li class="bg-white p-2 m-2 rounded-full shadow-[0_5px_25px_rgba(0,0,0,0.5)]  mb-3 mt-3 flex gap-3 pl-6  ">task 1 </li>
+            <li class="bg-white p-2 m-2 rounded-full shadow-[0_5px_25px_rgba(0,0,0,0.5)]  mb-3 mt-3 flex gap-3 pl-6  ">task 1 </li>
+            <li class="bg-white p-2 m-2 rounded-full shadow-[0_5px_25px_rgba(0,0,0,0.5)]  mb-3 mt-3 flex gap-3 pl-6  ">task 1 </li>
+            <li class="bg-white p-2 m-2 rounded-full shadow-[0_5px_25px_rgba(0,0,0,0.5)]  mb-3 mt-3 flex gap-3 pl-6  ">task 1 </li>
+            <li class="bg-white p-2 m-2 rounded-full shadow-[0_5px_25px_rgba(0,0,0,0.5)]  mb-3 mt-3 flex gap-3 pl-6  ">task 1 </li>
+            <li class="bg-white p-2 m-2 rounded-full shadow-[0_5px_25px_rgba(0,0,0,0.5)]  mb-3 mt-3 flex gap-3 pl-6  ">task 1 </li>
+            <li class="bg-white p-2 m-2 rounded-full shadow-[0_5px_25px_rgba(0,0,0,0.5)]  mb-3 mt-3 flex gap-3 pl-6  ">task 1 </li>
+            <li class="bg-white p-2 m-2 rounded-full shadow-[0_5px_25px_rgba(0,0,0,0.5)]  mb-3 mt-3 flex gap-3 pl-6  ">task 1 </li> -->
+ 
+       
+        </ul>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html
